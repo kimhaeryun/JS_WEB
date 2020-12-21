@@ -1,0 +1,191 @@
+.chrome {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+    color: white;
+    position: fixed;
+    }
+    
+    .chrome-box {
+    background-color:#082535;
+    background-size: 1500px;
+    min-width: 1000px;
+    min-height: 700px;
+    border-radius: 7px 7px;
+    border: 1px solid black;
+    text-align: center;
+    justify-content: center;
+    }
+
+    .chrome-box__column {
+    width: 100%;
+    height: 40px;
+    background: #fff -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
+    background: #ccc linear-gradient(to bottom, #ebebeb, #d5d5d5);
+    border-radius: 7px 7px 0 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+            align-items: center;
+    }
+
+    .head__chrome {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    font-size: 0;
+    font-weight: 500;
+    border-radius: 20px;
+    }
+    .head__chrome--close {
+    background: #ff5c5c;
+    border: 1px solid #e33e41;
+    margin-left: 17px;
+    }
+    .head__chrome--close:hover:before {
+    top: -14px;
+    left: .4px;
+    font-size: 30px;
+    color: white;
+    content: "\2A2F";
+    position: absolute;
+    }
+    .head__chrome--turn {
+    background: #ffbd4c;
+    border: 1px solid #e09e3e;
+    }
+    .head__chrome--turn:hover:before {
+    content: '';
+    top: 6.5px;
+    left: 3px;
+    width: 9px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    }
+    .head__chrome--expand {
+    background: #00ca56;
+    border: 1px solid #14ae46;
+    top: 1px;
+    }
+    .head__chrome--expand:hover:before {
+    content: '';
+    top: 6.5px;
+    left: 2px;
+    width: 11px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    }
+    .head__chrome--expand:hover:after {
+    content: '';
+    top: 2px;
+    left: 6.3px;
+    width: 2px;
+    height: 10px;
+    background: white;
+    position: absolute;
+    }
+    /*Terminal css*/
+
+    .chrome-box__column--input {
+    position: relative;
+    display: flex;
+    padding: 7px 0px;
+    color: black;
+    }
+
+    .chrome-box__column--input i {
+        margin: 5px 15px;
+    }
+    
+    .chrome-box--header__input {
+        border-radius: 20px;
+        padding: 8px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .chrome-box--header__input:focus {
+        outline: none;
+    }
+
+    .fa-star {
+        position: absolute;
+        right: 0;
+        animation: star 4s ease-in-out infinite;
+    }
+
+    @keyframes star {
+        0% {
+            color: black;
+            transform: none;
+        }
+        50% {
+            color: #ffb471;
+            transform: scale(2);
+        }
+        100% {
+            color: black;
+            transform: none;
+        }
+    }
+
+    .clicked {
+        color: #7f8c8d;
+      }
+
+    .form,
+    .greetings {
+        display: none;
+    }
+
+    .showing {
+        display: block;
+    }
+
+    .bgImage{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .js-clock {
+        color: white;
+        font-size: 40px;
+    }
+
+    .js-form input {
+        margin-bottom: 20px;
+    }
+
+    .js-form input,
+    .js-toDoForm input{
+        padding: 10px;
+        border: none;
+        font-size: 25px;
+        background-color: transparent;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: white;
+    }
+
+    .js-greetings {
+        font-size: 30px;
+    }
+
+    .js-toDoList li {
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+    }

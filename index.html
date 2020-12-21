@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="index.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div class="js-clock">
-      <h1>00:00</h1>
-   </div>
-    <form class="js-form form">
-      <input type="text" placeholder="이름이 무엇인가요?">
-    </form>
-    <h2 class="js-greetings greetings"></h2>
-    <form class="js-toDoForm">
-      <input type="text" placeholder="할 일 작성" />
-    </form>
-    <ul class="js-toDoList">
-    </ul>
-    <span class="js-weather">
 
-    </span>
-    <script src="clock.js"></script>
-    <script src="gretting.js"></script>
-    <script src="todo.js"></script>
-    <script src="bg.js"></script>
-    <script src="weather.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.4, minimum=scale=0.3">
+  <title>chrome web</title>
+  <script src="https://kit.fontawesome.com/27b2ad561b.js" crossorigin="anonymous"></script>
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="background--box"></div>
+  <div class="chrome">
+    <div class="chrome-box">
+      <div class="chrome-box__column">
+        <div class="head__chrome head__chrome--close"></div>
+        <div class="head__chrome head__chrome--turn"> </div>
+        <div class="head__chrome head__chrome--expand"></div>
+      </div>
+      <div class="chrome-box__column chrome-box__column--input">
+        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-arrow-right"></i>
+        <i class="fas fa-redo"></i>
+        <input class="chrome-box--header__input" type="text" placeholder="검색어를 입력하세요" />
+        <i class="far fa-star fa-lg"></i>
+      </div>
+      <div class="js-clock">
+        <h1>00:00</h1>
+      </div>
+      <form class="js-form form">
+        <input type="text" placeholder="이름을 입력해주세요" />
+      </form>
+      <h4 class="js-greetings greetings"></h4>
+      <form class="js-toDoForm">
+        <input type="text" placeholder="일정을 작성해주세요">
+      </form>
+      <ul class="js-toDoList">
+      </ul>
+      <span class="js-weather"></span>
+      <script src="clock.js"></script>
+      <script src="gretting.js"></script>
+      <script src="todo.js"></script>
+      <script src="bg.js"></script>
+      <script src="weather.js"></script>
+    </div>
+  </div>
+</body>
+
 </html>

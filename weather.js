@@ -4,55 +4,52 @@ const API_KEY = "c56fef9c8509ec4104f0e24526e154d3";
 const COORDS = "coords";
 
 function getWeather(lat, lng) {
-    fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}`
-    )
-
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(json) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
+    ).then(function (response) {
+        return response.json();
+    })
+        .then(function (json) {
             const temperature = json.main.temp;
             const place = json.name;
-            weather.innerText = `${temperature} @ ${place}`;
+            weather.innerText = `${temperature} @${place} `;
         });
-    }
+}
 
-function saveCoords(coordsObj){
+function saveCoords(coordsObj) {
     localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
 
-function handleGeoSucces(position){
+function handleGeoSucces(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    const coords = {
+    const coordsObj = {
         latitude,
         longitude
     };
-
     saveCoords(coordsObj);
-    getWeather(latitude, longitude);
+    getWeather(latitude, longitude
+    )
 }
 
-function handleGeoError(){
-    console.log('위치 정보를 읽을 수 없습니다.')
+function handleGeoError() {
+    console.log("Cant access geo location");
 }
 
-function askForCoords(){
-    navigator.geolocation.getCurrentPosition(handleGeoSucces, handleGeoError)
+function askForCoords() {
+    navigator.geolocation.getCurrentPosition(handleGeoSucces, handleGeoError);
 }
 
-function loadCoords(){
+function loadCoords() {
     const loadedCoords = localStorage.getItem(COORDS);
-    if(loadedCoords === null){
+    if (loadedCoords === null) {
         askForCoords();
     } else {
-       const parseCoords = JSON.parse(loadedCoords);
-       getWeather(parseCoords.latitude, parseCoords.longitude);
+        const parseCoords = JSON.parse(loadedCoords);
+        getWeather(parseCoords.latitude, parseCoords.longitude);
     }
 }
 
-function init(){
+function init() {
     loadCoords();
 }
 
